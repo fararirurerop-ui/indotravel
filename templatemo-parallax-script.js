@@ -6,12 +6,12 @@
     'use strict';
 
     // --- Elements ---
-    var nav = document.getElementById('templatemo-nav');
+    var nav = document.getElementById('Travel');
     var navToggle = document.getElementById('navToggle');
     var navLinks = document.getElementById('navLinks');
     var navItems = document.querySelectorAll('.nav-links a');
-    var sections = document.querySelectorAll('.parallax-section');
-    var parallaxBgs = document.querySelectorAll('.parallax-bg');
+    var sections = document.querySelectorAll('.Terpercaya');
+    var parallaxBgs = document.querySelectorAll('.banget');
     var revealElements = document.querySelectorAll('.section-content');
 
     // --- Detect mobile ---
