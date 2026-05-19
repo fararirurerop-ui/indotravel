@@ -1,45 +1,31 @@
 <!DOCTYPE html>
-<html lang="en" >
+<html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>Classic Login Form Example</title>
-  <link href="https://fonts.googleapis.com/css?family=Assistant:400,700" rel="stylesheet"><link rel="stylesheet" href="./style.css">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Login - Travel Terpercaya</title>
 
+  <link rel="stylesheet" href="style.css">
 </head>
+
 <body>
-<!-- partial:index.partial.html -->
-<section class='login' id='login'>
-  <form action="../index.html" method="GET">
-  <div class='head'>
-  <h1 class='company'>TRAVEL TERPERCAYA</h1>
+
+  <div class="container">
+    <div class="login-box" id="login">
+      <h2>TRAVEL TERPERCAYA</h2>
+      <p>Welcome back</p>
+
+      <input type="text" id="username" placeholder="Username">
+      <input type="password" id="password" placeholder="Password">
+
+      <div class="buttons">
+        <button id="do-login">Login</button>
+        <a href="#" class="forgot">Forgot?</a>
+      </div>
+    </div>
   </div>
-  <p class='msg'>Selamat Datang</p>
-  <div class='form'>
- <form id="loginForm">
-  <input type="text" id="username" placeholder="Username" required>
-  <input type="password" id="password" placeholder="Password" required>
-  <button type="submit">Login</button>
-</form>
 
-<script>
-  document.getElementById("loginForm").addEventListener("submit", function(event){
-    event.preventDefault();
-
-    let user = document.getElementById("username").value;
-    let pass = document.getElementById("password").value;
-
-    if(user === "heri" && pass === "123"){
-      window.location.href = "../index.html";
-    } else {
-      alert("Username atau Password salah!");
-    }
-  });
-</script>
-  </div>
-</section>
-<footer>
-<!-- partial -->
-  <script  src="./script.js"></script>
+  <script src="script.js"></script>
 
 </body>
 </html>
