@@ -190,3 +190,30 @@ https://templatemo.com/tm-612-parallax-starter
     }
 
 })();
+
+const loginLink = document.getElementById("loginLink");
+
+function cekLogin() {
+  if (localStorage.getItem("loggedIn") === "true") {
+    loginLink.innerText = "LOGOUT";
+    loginLink.href = "#";
+  } else {
+    loginLink.innerText = "LOGIN";
+    loginLink.href = "login/index.html";
+  }
+}
+
+cekLogin();
+
+// kalau klik logout
+loginLink.addEventListener("click", function (e) {
+  if (localStorage.getItem("loggedIn") === "true") {
+    e.preventDefault();
+    localStorage.removeItem("loggedIn");
+    localStorage.removeItem("user");
+
+    alert("Logout berhasil!");
+    cekLogin();
+    window.location.reload();
+  }
+});
