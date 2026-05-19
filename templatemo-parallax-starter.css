@@ -8,6 +8,9 @@ https://templatemo.com/tm-612-parallax-starter
    ========================================================================== */
 
 /* --- CSS Variables --- */
+
+<link rel="stylesheet" href="style.css">
+
 :root {
     --font-heading: 'Oswald', sans-serif;
     --font-body: 'Source Sans 3', sans-serif;
