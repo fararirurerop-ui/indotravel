@@ -1,97 +1,80 @@
 body {
-  background: #ABCDEF;
-  font-family: Assistant, sans-serif;
+  margin: 0;
+  padding: 0;
+  font-family: Arial, sans-serif;
+  height: 100vh;
   display: flex;
-  min-height: 90vh;
-}
-.login {
-  color: white;
-  background: background: #136a8a;
-  background: 
-    -webkit-linear-gradient(to right, #267871, #136a8a);
-  background: 
-    linear-gradient(to right, #267871, #136a8a);
-  margin: auto;
-  box-shadow: 
-    0px 2px 10px rgba(0,0,0,0.2), 
-    0px 10px 20px rgba(0,0,0,0.3), 
-    0px 30px 60px 1px rgba(0,0,0,0.5);
-  border-radius: 8px;
-  padding: 50px;
-}
-.login .head {
-  display: flex;
-  align-items: center;
   justify-content: center;
+  align-items: center;
+  background: #d8d8d8;
 }
-.login .head .company {
-  font-size: 2.2em;
-}
-.login .msg {
+
+.login-box {
+  width: 320px;
+  padding: 25px;
+  background: #2c7a78;
+  border-radius: 6px;
+  box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.4);
   text-align: center;
 }
-.login .form input[type=text].text {
-  border: none;
-  background: none;
-  box-shadow: 0px 2px 0px 0px white;
-  width: 100%;
+
+.login-box h2 {
+  margin: 0;
   color: white;
-  font-size: 1em;
-  outline: none;
+  font-size: 18px;
+  letter-spacing: 1px;
 }
-.login .form .text::placeholder {
-  color: #D3D3D3;
-}
-.login .form input[type=password].password {
-  border: none;
-  background: none;
-  box-shadow: 0px 2px 0px 0px white;
-  width: 100%;
+
+.login-box p {
   color: white;
-  font-size: 1em;
-  outline: none;
+  font-size: 12px;
+  margin-top: 10px;
   margin-bottom: 20px;
-  margin-top: 20px;
 }
-.login .form .password::placeholder {
-  color: #D3D3D3;
-}
-.login .form .btn-login {
-  background: none;
-  text-decoration: none;
+
+.login-box input {
+  width: 100%;
+  padding: 10px;
+  margin: 10px 0;
+  border: none;
+  border-bottom: 1px solid white;
+  outline: none;
+  background: transparent;
   color: white;
-  box-shadow: 0px 0px 0px 2px white;
-  border-radius: 3px;
-  padding: 5px 2em;
-  transition: 0.5s;
 }
-.login .form .btn-login:hover {
+
+.login-box input::placeholder {
+  color: white;
+  opacity: 0.7;
+}
+
+.btn-area {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 15px;
+}
+
+#do-login {
+  padding: 6px 15px;
+  border: 1px solid white;
+  background: transparent;
+  color: white;
+  cursor: pointer;
+  border-radius: 4px;
+}
+
+#do-login:hover {
   background: white;
-  color: dimgray;
-  transition: 0.5s;
+  color: #2c7a78;
 }
-.login .forgot {
-  text-decoration: none;
+
+.forgot {
   color: white;
-  float: right;
-}
-footer {
-  position: absolute;
-  color: #136a8a;
-  bottom: 10px;
-  padding-left: 20px;
-}
-footer p {
-  display: inline;
-}
-footer a {
-  color: green;
+  font-size: 12px;
   text-decoration: none;
 }
-footer a:hover {
+
+.forgot:hover {
   text-decoration: underline;
-}
-footer .heart {
-  color: #B22222;
-  font-size: 1.5em
 }
