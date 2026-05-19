@@ -15,12 +15,26 @@
   </div>
   <p class='msg'>Welcome back</p>
   <div class='form'>
-    <form>
-  <input type="text" placeholder='Username' class='text' id='username' required><br>
-  <input type="password" placeholder='••••••••••••••' class='password'><br>
-  <a href="#" class='btn-login' id='do-login'>Login</a>
-  <a href="#" class='forgot'>Forgot?</a>
-    </form>
+ <form id="loginForm">
+  <input type="text" id="username" placeholder="Username" required>
+  <input type="password" id="password" placeholder="Password" required>
+  <button type="submit">Login</button>
+</form>
+
+<script>
+  document.getElementById("loginForm").addEventListener("submit", function(event){
+    event.preventDefault();
+
+    let user = document.getElementById("username").value;
+    let pass = document.getElementById("password").value;
+
+    if(user === "admin" && pass === "123"){
+      window.location.href = "../index.html";
+    } else {
+      alert("Username atau Password salah!");
+    }
+  });
+</script>
   </div>
 </section>
 <footer>
