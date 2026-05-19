@@ -1,17 +1,22 @@
 /* ==========================================================================
-   Travel Terpercaya
+   Parallax Starter - Free HTML CSS Template
+
+TemplateMo 612 Parallax Starter
+
+https://templatemo.com/tm-612-parallax-starter
+
    ========================================================================== */
 
 (function () {
     'use strict';
 
     // --- Elements ---
-    var nav = document.getElementById('Travel');
+    var nav = document.getElementById('templatemo-nav');
     var navToggle = document.getElementById('navToggle');
     var navLinks = document.getElementById('navLinks');
     var navItems = document.querySelectorAll('.nav-links a');
-    var sections = document.querySelectorAll('.Terpercaya');
-    var parallaxBgs = document.querySelectorAll('.banget');
+    var sections = document.querySelectorAll('.parallax-section');
+    var parallaxBgs = document.querySelectorAll('.parallax-bg');
     var revealElements = document.querySelectorAll('.section-content');
 
     // --- Detect mobile ---
