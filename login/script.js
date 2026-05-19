@@ -6,9 +6,12 @@ btnLogin.onclick = function () {
 
   if (username.value === "heri" && password.value === "123") {
 
+    localStorage.setItem("loggedIn", "true");
+    localStorage.setItem("user", username.value);
+
     alert("Login berhasil!");
 
-    // langsung pindah ke halaman utama
+    // balik ke halaman utama
     window.location.href = "../index.html";
 
   } else {
