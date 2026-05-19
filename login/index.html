@@ -10,22 +10,37 @@
 
 <body>
 
-  <div class="container">
-    <div class="login-box" id="login">
-      <h2>TRAVEL TERPERCAYA</h2>
-      <p>Welcome back</p>
+  <div class="login-box">
+    <h2>TRAVEL TERPERCAYA</h2>
+    <p>Welcome back</p>
 
-      <input type="text" id="username" placeholder="Username">
-      <input type="password" id="password" placeholder="Password">
+    <input type="text" id="username" placeholder="Username" required>
+    <input type="password" id="password" placeholder="Password" required>
 
-      <div class="buttons">
-        <button id="do-login">Login</button>
-        <a href="#" class="forgot">Forgot?</a>
-      </div>
+    <div class="btn-area">
+      <button id="do-login">Login</button>
+      <a href="#" class="forgot">Forgot?</a>
     </div>
   </div>
 
-  <script src="script.js"></script>
+  <script>
+    var btnLogin = document.getElementById("do-login");
+    var username = document.getElementById("username");
+    var password = document.getElementById("password");
+
+    btnLogin.onclick = function () {
+
+      if (username.value === "heri" && password.value === "123") {
+        alert("Login berhasil!");
+
+        // balik ke halaman utama
+        window.location.href = "../index.html";
+
+      } else {
+        alert("Username atau Password salah!");
+      }
+    };
+  </script>
 
 </body>
 </html>
