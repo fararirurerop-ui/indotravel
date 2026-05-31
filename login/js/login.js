@@ -12,7 +12,7 @@ btnLogin.onclick = function () {
         alert ("Login berhasil!");
     
         // balik ke halaman utama
-        window.location.href = "../index.html";
+        window.location.replace("../index.html");
     
     } else {
         alert("Username atau Password salah!");
