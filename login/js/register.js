@@ -7,6 +7,7 @@ btnRegister.addEventListener("click", function () {
 
     localStorage.setItem("registeredUser", username);
     localStorage.setItem("registeredPassword", password);
+    localStorage.setItem("registered", "true");
 
     alert("Pendaftaran berhasil!");
 
