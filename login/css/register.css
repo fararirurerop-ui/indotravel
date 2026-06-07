@@ -1,0 +1,80 @@
+body {
+  margin: 0;
+  padding: 0;
+  font-family: Arial, sans-serif;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: #d8d8d8;
+}
+
+.register-box {
+  width: 320px;
+  padding: 25px;
+  background: #2c7a78;
+  border-radius: 6px;
+  box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.4);
+  text-align: center;
+}
+
+.register-box h2 {
+  margin: 0;
+  color: white;
+  font-size: 18px;
+  letter-spacing: 1px;
+}
+
+.register-box p {
+  color: white;
+  font-size: 12px;
+  margin-top: 10px;
+  margin-bottom: 20px;
+}
+
+.register-box input {
+  width: 100%;
+  padding: 10px;
+  margin: 10px 0;
+  border: none;
+  border-bottom: 1px solid white;
+  outline: none;
+  background: transparent;
+  color: white;
+}
+
+.register-box input::placeholder {
+  color: white;
+  opacity: 0.7;
+}
+
+.btn-area {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 15px;
+}
+
+#do-register {
+  padding: 6px 15px;
+  border: 1px solid white;
+  background: transparent;
+  color: white;
+  cursor: pointer;
+  border-radius: 4px;
+}
+
+#do-register:hover {
+  background: white;
+  color: #2c7a78;
+}
+
+.forgot {
+  color: white;
+  font-size: 12px;
+  text-decoration: none;
+}
+
+.forgot:hover {
+  text-decoration: underline;
+}
