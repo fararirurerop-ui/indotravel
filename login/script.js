@@ -1,51 +1,23 @@
-var loginForm =
-document.getElementById("loginForm");
+var btnLogin = document.getElementById("do-login");
+var username = document.getElementById("username");
+var password = document.getElementById("password");
 
-loginForm.addEventListener(
-"submit",
-function(e){
+btnLogin.addEventListener("click", function () {
 
-    e.preventDefault();
+    if (username.value === "heri" && password.value === "123") {
 
-    const username =
-    document.getElementById("username").value;
+        localStorage.setItem("loggedIn", "true");
+        localStorage.setItem("user", username.value);
 
-    const password =
-    document.getElementById("password").value;
+        alert("Login berhasil!");
 
-    const userData =
-    localStorage.getItem(username);
+        // redirect ke halaman utama GitHub Pages
+        window.location.href = "https://fararirurerop-ui.github.io/indotravel/";
 
-    if(!userData){
+    } else {
 
-        alert("User tidak ditemukan");
-        return;
-    }
+        alert("Username atau Password salah!");
 
-    const user =
-    JSON.parse(userData);
-
-    if(user.password === password){
-
-        localStorage.setItem(
-            "loggedIn",
-            "true"
-        );
-
-        localStorage.setItem(
-            "currentUser",
-            username
-        );
-
-        alert("Login berhasil");
-
-        window.location.href =
-        "https://fararirurerop-ui.github.io/indotravel/";
-
-    }
-    else{
-
-        alert("Password salah");
     }
 
 });
