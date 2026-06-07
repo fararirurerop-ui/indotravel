@@ -1,57 +1,46 @@
-document.addEventListener("DOMContentLoaded", function () {
+window.onload = function () {
 
-    const user = localStorage.getItem("username");
-    const registeredUser = localStorage.getItem("registeredUser");
+    let registered = localStorage.getItem("registered");
+    let loggedIn = localStorage.getItem("loggedIn");
+    let user = localStorage.getItem("user");
 
-    const userInfo = document.getElementById("userInfo");
-    const authArea = document.getElementById("authArea");
+    let userInfo = document.getElementById("userInfo");
+    let authArea = document.getElementById("authArea");
 
-    // Sudah login
-    if (user) {
+    if (loggedIn === "true" && user) {
 
-        userInfo.innerText = "Halo, " + user;
+        userInfo.innerHTML = "Halo, " + user;
 
         authArea.innerHTML = `
-            <button onclick="logout()" class="nav-cta">
-                Logout
-            </button>
+            <button onclick="logout()">Logout</button>
         `;
 
-    }
+    } else if (registered === "true") {
 
-    // Sudah daftar tapi belum login
-    else if (registeredUser) {
-
-        userInfo.innerText = "Belum login";
+        userInfo.innerHTML = "Belum login";
 
         authArea.innerHTML = `
-            <button onclick="goLogin()" class="nav-cta">
-                Login
-            </button>
+            <button onclick="goLogin()">Login</button>
         `;
 
-    }
+    } else {
 
-    // Belum daftar
-    else {
-
-        userInfo.innerText = "";
+        userInfo.innerHTML = "";
 
         authArea.innerHTML = `
-            <a href="login/register.html" class="nav-cta">
-                Daftar
+            <a href="login/register.html">
+                <button>Daftar</button>
             </a>
         `;
-
     }
-
-});
+};
 
 function goLogin() {
     window.location.href = "login/index.html";
 }
 
 function logout() {
-    localStorage.removeItem("username");
+    localStorage.removeItem("loggedIn");
+    localStorage.removeItem("user");
     location.reload();
 }
