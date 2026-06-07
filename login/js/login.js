@@ -1,36 +1,23 @@
-document.getElementById("loginForm").addEventListener("submit", async function(e) {
-    e.preventDefault();
+var btnLogin = document.getElementById("do-login");
+var username = document.getElementById("username");
+var password = document.getElementById("password");
 
-    const username = document.getElementById("username").value.trim();
-    const password = document.getElementById("password").value.trim();
+btnLogin.addEventListener("click", function () {
 
-    const res = await fetch("https://herisusanta.my.id/javalogin/api/auth.php", {
-        method: "POST",
-        headers: {
-            "Content-Type": "application/x-www-form-urlencoded"
-        },
-        body: `action=login&username=${encodeURIComponent(username)}&password=${encodeURIComponent(password)}`
-    });
+    if (username.value === "heri" && password.value === "123") {
 
-    const data = await res.json();
+        localStorage.setItem("loggedIn", "true");
+        localStorage.setItem("user", username.value);
 
-    if (data.status === "success") {
-        // simpan username
-            localStorage.setItem("username", data.username);
-            window.location.href = "../index.html";
-         
-    // } else {
-    //     document.getElementById("message").innerText = "Username / Password salah";alert("Login gagal");
-    // }
-    
+        alert("Login berhasil!");
+
+        // redirect ke halaman utama GitHub Pages
+        window.location.href = "https://fararirurerop-ui.github.io/indotravel/";
+
     } else {
-    const alertBox = document.getElementById("alertBox");
-    alertBox.innerText = "Username atau Password salah, silahkan coba lagi";
-    alertBox.style.display = "block";
 
-    setTimeout(() => {
-        alertBox.style.display = "none";
-    }, 3000);
-} 
-   
+        alert("Username atau Password salah!");
+
+    }
+
 });
