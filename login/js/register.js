@@ -1,4 +1,4 @@
-var btnLogin = document.getElementById("do-daftar");
+var btnRegister = document.getElementById("do-register");
 var username = document.getElementById("username");
 var password = document.getElementById("password");
 
