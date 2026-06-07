@@ -17,6 +17,8 @@ document.addEventListener("DOMContentLoaded", function () {
             </button>
         `;
         
+    }
+        
 
     // Sudah daftar tapi belum login
     else if (registeredUser) {
