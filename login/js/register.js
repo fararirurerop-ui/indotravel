@@ -1,13 +1,15 @@
 var btnRegister = document.getElementById("do-register");
-var username = document.getElementById("username");
-var password = document.getElementById("password");
 
-    const data = await res.json();
+btnRegister.addEventListener("click", function () {
 
-    if (data.status === "success") {
-        document.getElementById("message").innerText = "Registrasi berhasil, silakan login";
-        window.location.href = "index.html";
-    } else {
-        document.getElementById("message").innerText = data.message || "Gagal registrasi";
-    }
+    var username = document.getElementById("username").value;
+    var password = document.getElementById("password").value;
+
+    localStorage.setItem("registeredUser", username);
+    localStorage.setItem("registeredPassword", password);
+
+    alert("Pendaftaran berhasil!");
+
+    window.location.href = "index.html";
+
 });
