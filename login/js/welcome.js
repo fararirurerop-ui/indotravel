@@ -6,6 +6,7 @@ document.addEventListener("DOMContentLoaded", function () {
     const userInfo = document.getElementById("userInfo");
     const authArea = document.getElementById("authArea");
 
+    // Sudah login
     if (user) {
 
         userInfo.innerText = "Halo, " + user;
@@ -16,7 +17,10 @@ document.addEventListener("DOMContentLoaded", function () {
             </button>
         `;
 
-    } else if (registeredUser) {
+    }
+
+    // Sudah daftar tapi belum login
+    else if (registeredUser) {
 
         userInfo.innerText = "Belum login";
 
@@ -26,7 +30,10 @@ document.addEventListener("DOMContentLoaded", function () {
             </button>
         `;
 
-    } else {
+    }
+
+    // Belum daftar
+    else {
 
         userInfo.innerText = "";
 
@@ -35,6 +42,7 @@ document.addEventListener("DOMContentLoaded", function () {
                 Daftar
             </a>
         `;
+
     }
 
 });
