@@ -6,17 +6,30 @@ document.addEventListener("DOMContentLoaded", function () {
 
     function logout() {
         localStorage.removeItem("username");
+        localStorage.removeItem("user");
+        localStorage.removeItem("loggedIn");
+
         location.reload();
     }
 
-    const user = localStorage.getItem("username");
+    const user =
+        localStorage.getItem("username") ||
+        localStorage.getItem("user");
 
     if (user) {
-        document.getElementById("userInfo").innerText = "Halo, " + user;
 
-        document.getElementById("authArea").innerHTML = `
-            <button onclick="logout()" class="nav-cta">Logout</button>
-        `;
+        const userInfo = document.getElementById("userInfo");
+        const authArea = document.getElementById("authArea");
+
+        if (userInfo) {
+            userInfo.innerHTML = "Halo, " + user;
+        }
+
+        if (authArea) {
+            authArea.innerHTML =
+                '<button onclick="logout()">Logout</button>';
+        }
+
     }
 
     window.goLogin = goLogin;
