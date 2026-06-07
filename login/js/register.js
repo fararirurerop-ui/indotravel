@@ -10,6 +10,6 @@ btnRegister.addEventListener("click", function () {
 
     alert("Pendaftaran berhasil!");
 
-    window.location.href = "index.html";
+    window.location.href = "../index.html";
 
 });
