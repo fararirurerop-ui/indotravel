@@ -1,38 +1,49 @@
 document.addEventListener("DOMContentLoaded", function () {
 
-    function goLogin() {
-        window.location.href = "login/index.html";
-    }
+    const user = localStorage.getItem("username");
+    const registeredUser = localStorage.getItem("registeredUser");
 
-    function logout() {
-        localStorage.removeItem("username");
-        localStorage.removeItem("user");
-        localStorage.removeItem("loggedIn");
-
-        location.reload();
-    }
-
-    const user =
-        localStorage.getItem("username") ||
-        localStorage.getItem("user");
+    const userInfo = document.getElementById("userInfo");
+    const authArea = document.getElementById("authArea");
 
     if (user) {
 
-        const userInfo = document.getElementById("userInfo");
-        const authArea = document.getElementById("authArea");
+        userInfo.innerText = "Halo, " + user;
 
-        if (userInfo) {
-            userInfo.innerHTML = "Halo, " + user;
-        }
+        authArea.innerHTML = `
+            <button onclick="logout()" class="nav-cta">
+                Logout
+            </button>
+        `;
 
-        if (authArea) {
-            authArea.innerHTML =
-                '<button onclick="logout()">Logout</button>';
-        }
+    } else if (registeredUser) {
 
+        userInfo.innerText = "Belum login";
+
+        authArea.innerHTML = `
+            <button onclick="goLogin()" class="nav-cta">
+                Login
+            </button>
+        `;
+
+    } else {
+
+        userInfo.innerText = "";
+
+        authArea.innerHTML = `
+            <a href="login/register.html" class="nav-cta">
+                Daftar
+            </a>
+        `;
     }
 
-    window.goLogin = goLogin;
-    window.logout = logout;
-
 });
+
+function goLogin() {
+    window.location.href = "login/index.html";
+}
+
+function logout() {
+    localStorage.removeItem("username");
+    location.reload();
+}
